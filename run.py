@@ -35,7 +35,7 @@ import posixpath
 import shutil
 import os
 
-directories = ["characters"]
+directories = ["/tmp/out/characters"]
 export_types = ["gltf"]
 for export_type in export_types:
     shutil.rmtree(export_type, ignore_errors=True)
