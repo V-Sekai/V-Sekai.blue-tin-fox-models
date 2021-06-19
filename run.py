@@ -36,7 +36,7 @@ import shutil
 import os
 
 bpy.ops.preferences.addon_install(filepath='./1_11_0.zip')
-bpy.ops.preferences.addon_enable(module="VRM format")
+bpy.ops.preferences.addon_enable(module="1_11_0")
 
 directories = ["characters"]
 export_path = "result"
