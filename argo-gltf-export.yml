@@ -14,15 +14,15 @@ spec:
       container:
         image: nytimes/blender:2.92-cpu-ubuntu18.04
         command: [sh -c]
-        args: |
-          apt install -y xvfb
-          wget https://github.com/qarmin/gtk_library_store/releases/download/3.24.0/swiftshader.zip
-          unzip swiftshader.zip
-          rm swiftshader.zip
-          curr="$(pwd)/libvk_swiftshader.so"
-          sed -i "s|PATH_TO_CHANGE|$curr|" vk_swiftshader_icd.json
+        args: [
+          apt install -y xvfb \
+          wget https://github.com/qarmin/gtk_library_store/releases/download/3.24.0/swiftshader.zip \
+          unzip swiftshader.zip \
+          rm swiftshader.zip \
+          curr="$(pwd)/libvk_swiftshader.so" \
+          sed -i "s|PATH_TO_CHANGE|$curr|" vk_swiftshader_icd.json \
           VK_ICD_FILENAMES=vk_swiftshader_icd.json DRI_PRIME=0 xvfb-run \
-          --server-args=\"-screen 0 1366x786x24 -ac -nolisten tcp -dpi 96\" timeout 120s blender --background --python /tmp/out/run.py
+          --server-args=\"-screen 0 1366x786x24 -ac -nolisten tcp -dpi 96\" timeout 120s blender --background --python /tmp/out/run.py]
         volumeMounts:
         - mountPath: /tmp/out
           name: out
