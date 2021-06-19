@@ -4,7 +4,7 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     container:
-      image: dockerhub-username:docker-image-tag
+      image: nytimes/blender:2.92-cpu-ubuntu18.04
     steps:
     - name: Checkout
       uses: actions/checkout@v2
