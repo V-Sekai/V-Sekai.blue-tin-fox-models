@@ -36,27 +36,21 @@ import shutil
 import os
 
 directories = ["/tmp/out/characters"]
-export_types = ["gltf"]
-for export_type in export_types:
-    shutil.rmtree(export_type, ignore_errors=True)
-    posixpath.os.mkdir(export_type, mode=0o777)
+export_path = "/tmp/out/result/"
+shutil.rmtree(export_path, ignore_errors=True)
+posixpath.os.mkdir(export_path, mode=0o777)
 for directory in directories:
-    for filename in os.listdir(directory):
-        if not filename.endswith(".blend"):
-            continue
-        for export_type in export_types:
-            bpy.ops.wm.open_mainfile(filepath=os.path.join(directory, filename))
+    for root, subdirs, files in os.walk(directory):   
+        for subdir in subdirs:
+            print('\t- subdirectory ' + subdir) 
+        for filename in files:
+            if not filename.endswith(".blend"):
+                continue
+            bpy.ops.wm.open_mainfile(filepath=os.path.join(root, filename))
             basename = filename.rsplit(".blend", 1)[0]
-            export_path = os.path.normpath(os.path.join(directory, os.pardir, export_type, basename + "." + export_type))
-            if export_type == "gltf":
-                bpy.ops.export_scene.gltf(
-                    filepath=export_path,
-                    export_format='GLB',
-                    export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
-                )
-            elif export_type == "fbx":
-                bpy.ops.export_scene.fbx(filepath=export_path)
-            elif export_type == "obj":
-                bpy.ops.export_scene.obj(filepath=export_path)
-            elif export_type == "dae":
-                bpy.ops.wm.collada_export(filepath=export_path)
+            basename = "v_sekai_" + basename
+            bpy.ops.export_scene.gltf(
+                filepath=os.path.join(export_path, basename + ".gltf"),
+                export_format='GLB',
+                export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
+            )
