@@ -62,6 +62,6 @@ for directory in directories:
                 export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
             )
             bpy.ops.export_scene.vrm(
-                filepath=os.path.join(export_path, basename + ".gltf")
+                filepath=os.path.join(export_path, basename + ".vrm")
             )
 
