@@ -35,8 +35,8 @@ import posixpath
 import shutil
 import os
 
-directories = ["/tmp/out/characters"]
-export_path = "/tmp/out/result/"
+directories = ["characters"]
+export_path = "result"
 shutil.rmtree(export_path, ignore_errors=True)
 posixpath.os.mkdir(export_path, mode=0o777)
 for directory in directories:
