@@ -15,6 +15,10 @@ spec:
         image: nytimes/blender:2.92-cpu-ubuntu18.04
         command: [bash]
         source: |
+            # Azure repositories are not reliable, we need to prevent azure giving us packages.       
+            rm -f /etc/apt/sources.list.d/*
+            cp -f misc/ci/sources.list /etc/apt/sources.list
+            apt-get update
             apt install -y -qq xvfb unzip wget zip
             wget https://github.com/qarmin/gtk_library_store/releases/download/3.24.0/swiftshader.zip
             unzip swiftshader.zip
