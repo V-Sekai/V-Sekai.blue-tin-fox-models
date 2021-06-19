@@ -1,0 +1,94 @@
+name: "Build workflow"
+on: [push]
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.x
+      - name: Get host
+        run: |
+          uname -a
+        shell: bash
+      - name: Install k3d
+        run: |
+          curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | TAG=v4.0.0 bash
+        shell: bash
+      - name: Create k3d cluster
+        run: | 
+          k3d cluster create --agents=3 --volume /tmp/out:/tmp/out@agent[0,1,2]
+        shell: bash
+      - name: Curl get kubectl
+        run: |
+          curl -LO https://dl.k8s.io/release/v1.21.0/bin/linux/amd64/kubectl
+        shell: bash
+      - name: Make executable kubectl
+        run: |
+          chmod +x kubectl
+        shell: bash
+      - name: Move binary to path
+        run: |
+          sudo mv ./kubectl /usr/local/bin/kubectl
+        shell: bash
+      - name: Create k3d context
+        run: |
+          kubectl config use-context k3d-k3s-default
+        shell: bash
+      - name: Cluster Info
+        run: |
+          kubectl cluster-info
+        shell: bash
+      - name: Create argo namespace in k8s
+        run: |
+          kubectl create ns argo
+        shell: bash
+      - name: Install argo in k8s
+        run: |
+          kubectl apply -n argo --wait=true -f quick-start-postgres.yml
+        shell: bash
+      - name: Setup argo-cli
+        run: |
+          # Download the binary
+          curl -sLO https://github.com/argoproj/argo/releases/download/v3.0.7/argo-linux-amd64.gz
+
+          # Unzip
+          gunzip argo-linux-amd64.gz
+
+          # Make binary executable
+          chmod +x argo-linux-amd64
+
+          # Move binary to path
+          sudo mv ./argo-linux-amd64 /usr/local/bin/argo
+        shell: bash
+      - name: Test installation
+        run: |
+          argo version
+        shell: bash
+      - name: Wait for argo
+        run: |
+          kubectl rollout status deployment/argo-server -n argo
+        shell: bash
+      - name: Get pods
+        run: |
+          kubectl get pods --all-namespaces
+        shell: bash     
+      - name: Ensure /tmp/out exists
+        run: |
+          mkdir -p /tmp/out
+        shell: bash
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: /tmp/out
+      - name: Argo submit job
+        run: |
+          argo submit -n argo --log samples/argo-artifact.yml
+        shell: bash
+      - uses: actions/upload-artifact@v2
+        with:
+          name: message
+          path: /tmp/out/
