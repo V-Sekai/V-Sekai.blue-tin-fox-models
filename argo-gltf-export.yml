@@ -14,7 +14,7 @@ spec:
       container:
         image: nytimes/blender:2.92-cpu-ubuntu18.04
         command: [sh, -c]
-        args: ["ls /tmp/out"]   
+        args: ["blender --background --python /tmp/out/run.py"]   
         volumeMounts:
         - mountPath: /tmp/out
           name: out
