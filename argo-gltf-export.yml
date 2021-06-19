@@ -13,8 +13,8 @@ spec:
     - name: blender-export
       container:
         image: nytimes/blender:2.92-cpu-ubuntu18.04
-        command: [sh, -c]
-        args: ["blender --background --python /tmp/out/run.py"]   
+        command: [blender]
+        args: ["--background --python /tmp/out/run.py"]   
         volumeMounts:
         - mountPath: /tmp/out
           name: out
