@@ -86,7 +86,7 @@ jobs:
           path: out
       - name: Argo submit job
         run: |
-          argo submit -n argo --logs argo-gltf-export.yml
+          argo submit -n argo --log argo-gltf-export.yml
         shell: bash
       - uses: actions/upload-artifact@v2
         with:
