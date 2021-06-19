@@ -18,9 +18,13 @@ jobs:
         run: |
           curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | TAG=v4.0.0 bash
         shell: bash
+      - name: Ensure out exists
+        run: |
+          mkdir -p out
+        shell: bash
       - name: Create k3d cluster
         run: | 
-          k3d cluster create --agents=3 --volume /tmp/out:out@agent[0,1,2]
+          k3d cluster create --agents=3 --volume out:/tmp/out@agent[0,1,2]
         shell: bash
       - name: Curl get kubectl
         run: |
@@ -76,10 +80,6 @@ jobs:
         run: |
           kubectl get pods --all-namespaces
         shell: bash     
-      - name: Ensure out exists
-        run: |
-          mkdir -p out
-        shell: bash
       - name: Checkout
         uses: actions/checkout@v2
         with:
