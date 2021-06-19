@@ -35,6 +35,9 @@ import posixpath
 import shutil
 import os
 
+bpy.ops.preferences.addon_install(filepath='./1_11_0.zip')
+bpy.ops.preferences.addon_enable(module="VRM format")
+
 directories = ["characters"]
 export_path = "result"
 shutil.rmtree(export_path, ignore_errors=True)
@@ -58,3 +61,7 @@ for directory in directories:
                 export_cameras=True,
                 export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
             )
+            bpy.ops.export_scene.vrm(
+                filepath=os.path.join(export_path, basename + ".gltf")
+            )
+
