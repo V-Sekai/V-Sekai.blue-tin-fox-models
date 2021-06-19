@@ -17,7 +17,7 @@ spec:
         source: |
             apt update
             apt install -y -qq xvfb unzip wget zip
-            DRI_PRIME=0 xvfb-run --server-args=\"-screen 0 1366x786x24 -ac -nolisten tcp -dpi 96\" timeout 120s blender --background --python /tmp/out/run.py
+            DRI_PRIME=0 xvfb-run --auto-servernum --server-args=\"-screen 0 1366x786x24 -ac -nolisten tcp -dpi 96\" timeout 120s blender --background --python /tmp/out/run.py
         volumeMounts:
           - mountPath: /tmp/out
             name: out
