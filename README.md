@@ -1,8 +1,21 @@
-# Shot Generator Models
+# Blue Tin Fox Models
 
 Shot Generator is a feature within Storyboarder to easily set up shots using 3D characters, objects, lights, and cameras.
 
 Shot Generator uses 3D models as characters. This repository is the open source of those models as canonical Blender .blend files, and the exports used in shot generator: fbx, gltf, obj, etc.
+
+## Guidelines
+
+1. Use Blender blend files from 2.93 LTS.
+1. Export Blend file:
+    1. All images are stored outside of the blend file.
+    1. Do not have LOD in the name.
+    1. Do not store LODs in the Blend file.
+    1. Do not store glTF2s or other formats other than `.blend` in the repo.
+    1. TODO Substance `.sbsar` and MaterialX `.mtlx`
+    1. TODO vector graphics SVG
+    1. TODO reference the V-Sekai project in the convention. Maybe `VSEK_`
+
 
 ## Characters
 
