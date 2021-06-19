@@ -90,5 +90,5 @@ jobs:
         shell: bash
       - uses: actions/upload-artifact@v2
         with:
-          name: message
+          name: V-Sekai Blue Tin Fox Models 
           path: out
