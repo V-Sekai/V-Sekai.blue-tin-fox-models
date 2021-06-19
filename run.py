@@ -38,10 +38,26 @@ import os
 bpy.ops.preferences.addon_install(filepath='./1_11_0.zip')
 bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-1_11_0")
 
-directories = ["."]
 export_path = "result"
+
+directories = ["characters"]
 shutil.rmtree(export_path, ignore_errors=True)
 posixpath.os.mkdir(export_path, mode=0o777)
+for directory in directories:
+    for root, subdirs, files in os.walk(directory):   
+        for subdir in subdirs:
+            print('\t- subdirectory ' + subdir) 
+        for filename in files:
+            if not filename.endswith(".blend"):
+                continue
+            bpy.ops.wm.open_mainfile(filepath=os.path.join(root, filename))
+            basename = filename.rsplit(".blend", 1)[0]
+            basename = "v_sekai_" + basename
+            bpy.ops.export_scene.vrm(
+                filepath=os.path.join(export_path, basename + ".vrm")
+            )
+
+directories = ["environments", "objects", "characters"]
 for directory in directories:
     for root, subdirs, files in os.walk(directory):   
         for subdir in subdirs:
@@ -61,7 +77,3 @@ for directory in directories:
                 export_cameras=True,
                 export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
             )
-            bpy.ops.export_scene.vrm(
-                filepath=os.path.join(export_path, basename + ".vrm")
-            )
-
