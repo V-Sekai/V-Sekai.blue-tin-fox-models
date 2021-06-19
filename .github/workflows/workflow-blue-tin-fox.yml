@@ -20,7 +20,7 @@ jobs:
         shell: bash
       - name: Create k3d cluster
         run: | 
-          k3d cluster create --agents=3 --volume /tmp/out:/tmp/out@agent[0,1,2]
+          k3d cluster create --agents=3 --volume /tmp/out:out@agent[0,1,2]
         shell: bash
       - name: Curl get kubectl
         run: |
@@ -76,14 +76,14 @@ jobs:
         run: |
           kubectl get pods --all-namespaces
         shell: bash     
-      - name: Ensure /tmp/out exists
+      - name: Ensure out exists
         run: |
-          mkdir -p /tmp/out
+          mkdir -p out
         shell: bash
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: /tmp/out
+          path: out
       - name: Argo submit job
         run: |
           argo submit -n argo --log samples/argo-artifact.yml
@@ -91,4 +91,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: message
-          path: /tmp/out/
+          path: out
