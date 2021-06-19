@@ -52,5 +52,9 @@ for directory in directories:
             bpy.ops.export_scene.gltf(
                 filepath=os.path.join(export_path, basename + ".gltf"),
                 export_format='GLB',
+                export_colors=False,
+                export_all_influences=True,
+                export_extras=True,
+                export_cameras=True,
                 export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
             )
