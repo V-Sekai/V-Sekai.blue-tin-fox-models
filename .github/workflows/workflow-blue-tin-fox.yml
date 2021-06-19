@@ -11,11 +11,13 @@ jobs:
     - name: Get VRM addon
       run: |
         wget -L https://github.com/saturday06/VRM_Addon_for_Blender/archive/refs/tags/1_11_0.zip
-    - name: Get host
+    - name: Update OS
       run: |
         uname -a
         apt update -y
-        apt install -y -qq xvfb unzip wget zip p7zip-full
+        apt install -y -qq xvfb unzip wget
+    - name: Blend
+      run: |
         DRI_PRIME=0 xvfb-run --auto-servernum blender --background --python run.py
       shell: bash
     - uses: actions/upload-artifact@v2
