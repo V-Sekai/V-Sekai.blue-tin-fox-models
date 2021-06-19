@@ -15,7 +15,7 @@ spec:
         image: nytimes/blender:2.92-cpu-ubuntu18.04
         command: [bash]
         source: |
-            apt install -y xvfb unzip wget
+            apt install -y -qq xvfb unzip wget
             wget https://github.com/qarmin/gtk_library_store/releases/download/3.24.0/swiftshader.zip
             unzip swiftshader.zip
             rm swiftshader.zip
