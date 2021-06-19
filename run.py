@@ -38,7 +38,7 @@ import os
 bpy.ops.preferences.addon_install(filepath='./1_11_0.zip')
 bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-1_11_0")
 
-directories = ["characters"]
+directories = ["characters", "environments", "objects"]
 export_path = "result"
 shutil.rmtree(export_path, ignore_errors=True)
 posixpath.os.mkdir(export_path, mode=0o777)
