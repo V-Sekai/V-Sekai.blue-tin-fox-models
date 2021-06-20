@@ -27,7 +27,13 @@ jobs:
     - name: Release
       # if: startsWith(github.ref, 'refs/tags/')
       run: |
-        gh release create --prerelease `echo ./generate_tag.sh` ${{ env.FILES }}
+        mkdir gh_cli
+        cd gh_cli
+        curl -L https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.tar.gz
+        tar xvf gh_1.11.0_linux_amd64.tar.gz --transform='s/.*\///'^C
+        cd -
+        chmod +x gh
+        ./gh_cli/gh release create --prerelease `echo ./generate_tag.sh` ${{ env.FILES }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         FILES: result
