@@ -28,5 +28,5 @@ jobs:
       uses: ncipollo/release-action@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        artifact: "result"
+        artifacts: "result"
         token: ${{ secrets.GITHUB_TOKEN }}
