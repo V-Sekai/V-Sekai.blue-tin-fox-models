@@ -25,9 +25,10 @@ jobs:
         name: V-Sekai Blue Tin Fox Models 
         path: result
     - name: Release
-      uses: ncipollo/release-action@v1
       if: startsWith(github.ref, 'refs/tags/')
-      with:
-        artifacts: "result/*"
-        prerelease: true
-        token: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release create ${{ env.VERSION }} -n "${{ env.MESSAGE }}" -t "${{ env.NAME }}" ${{ env.FILES }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VERSION: ${{ env.GITHUB_REF }}
+        FILES: result
