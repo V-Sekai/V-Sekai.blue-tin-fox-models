@@ -13,7 +13,7 @@ jobs:
       run: |
         uname -a
         sudo apt update -y
-        sudo apt install -y -qq xvfb unzip wget flatpak
+        sudo apt install -y -qq xvfb unzip wget
         sudo flatpak install flathub org.blender.Blender
     - name: Blend
       run: |
