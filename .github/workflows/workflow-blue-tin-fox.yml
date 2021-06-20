@@ -15,7 +15,7 @@ jobs:
         sudo apt install -y -qq xvfb unzip wget
         sudo apt install -y flatpak
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        sudo yes | flatpak install flathub org.blender.Blender
+        sudo flatpak install flathub org.blender.Blender -y
     - name: Blend
       run: |
         DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python run.py
