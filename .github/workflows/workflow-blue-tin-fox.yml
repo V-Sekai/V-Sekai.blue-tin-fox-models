@@ -12,9 +12,9 @@ jobs:
     - name: Update OS
       run: |
         uname -a
-        apt update -y
-        apt install -y -qq xvfb unzip wget flatpak
-        flatpak install flathub org.blender.Blender
+        sudo apt update -y
+        sudo apt install -y -qq xvfb unzip wget flatpak
+        sudo flatpak install flathub org.blender.Blender
     - name: Blend
       run: |
         DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python run.py
