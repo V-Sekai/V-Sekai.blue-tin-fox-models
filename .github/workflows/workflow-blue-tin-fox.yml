@@ -2,7 +2,7 @@ name: "Build workflow"
 on: [push]
 jobs:
   build-ubuntu:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -12,8 +12,8 @@ jobs:
     - name: Update OS
       run: |
         uname -a
-        sudo apt update -y
         sudo apt install -y -qq xvfb unzip wget
+        sudo apt install -y flatpak
         sudo flatpak install flathub org.blender.Blender
     - name: Blend
       run: |
