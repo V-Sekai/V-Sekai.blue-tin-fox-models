@@ -19,7 +19,7 @@ jobs:
         sudo flatpak override org.blender.Blender --talk-name=org.freedesktop.Flatpak
     - name: Blend
       run: |
-        DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python run.py
+        DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python `pwd`/run.py
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
