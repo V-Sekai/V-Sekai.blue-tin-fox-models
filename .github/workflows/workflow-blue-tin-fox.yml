@@ -3,8 +3,6 @@ on: [push]
 jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
-    container:
-      image: nytimes/blender:2.92-cpu-ubuntu18.04
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -15,10 +13,11 @@ jobs:
       run: |
         uname -a
         apt update -y
-        apt install -y -qq xvfb unzip wget
+        apt install -y -qq xvfb unzip wget flatpak
+        flatpak install flathub org.blender.Blender
     - name: Blend
       run: |
-        DRI_PRIME=0 xvfb-run --auto-servernum blender --background --python run.py
+        DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python run.py
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
@@ -27,13 +26,6 @@ jobs:
     - name: Release
       # if: startsWith(github.ref, 'refs/tags/')
       run: |
-        mkdir gh_cli
-        cd gh_cli
-        wget https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.tar.gz
-        tar xvf gh_1.11.0_linux_amd64.tar.gz --transform='s/.*\///'
-        cd -
-        chmod +x ./gh_cli/gh
-        apt install -y git
         ./gh_cli/gh release create --prerelease `echo ./generate_tag.sh` ${{ env.FILES }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
