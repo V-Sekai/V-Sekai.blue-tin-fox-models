@@ -32,7 +32,7 @@ jobs:
         wget https://github.com/cli/cli/releases/download/v1.11.0/gh_1.11.0_linux_amd64.tar.gz
         tar xvf gh_1.11.0_linux_amd64.tar.gz --transform='s/.*\///'
         cd -
-        chmod +x gh
+        chmod +x ./gh_cli/gh
         ./gh_cli/gh release create --prerelease `echo ./generate_tag.sh` ${{ env.FILES }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
