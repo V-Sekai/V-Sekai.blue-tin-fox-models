@@ -24,3 +24,11 @@ jobs:
       with:
         name: V-Sekai Blue Tin Fox Models 
         path: result
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          result
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
