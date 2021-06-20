@@ -34,8 +34,12 @@ import bpy
 import posixpath
 import shutil
 import os
+import sys
 
-bpy.ops.preferences.addon_install(filepath='/home/runner/work/blue-tin-fox-models/blue-tin-fox-models/1_11_0.zip')
+argv = sys.argv
+argv = argv[argv.index("--") + 1:]  # get all args after "--"
+
+bpy.ops.preferences.addon_install(filepath=argv[0])
 bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-1_11_0")
 
 export_path = "result"
