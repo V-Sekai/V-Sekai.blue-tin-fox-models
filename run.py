@@ -63,7 +63,7 @@ for directory in directories:
 
 directories = ["environments", "objects", "characters"]
 for directory in directories:
-    for root, subdirs, files in os.walk(directory):   
+    for root, subdirs, files in os.walk(os.path.join(path, directory)):   
         for subdir in subdirs:
             print('\t- subdirectory ' + subdir) 
         for filename in files:
