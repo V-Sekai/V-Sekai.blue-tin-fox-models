@@ -23,5 +23,9 @@ jobs:
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
-        name: V-Sekai Blue Tin Fox Models 
-        path: result
+        name: V-Sekai Blue Tin Fox Models (VRM) 
+        path: result/*.vrm        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: V-Sekai Blue Tin Fox Models (glTF2) 
+        path: result/*.glb
