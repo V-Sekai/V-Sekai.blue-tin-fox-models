@@ -32,6 +32,7 @@ Tested on Blender 2.93.
         1. Set both "Armature" and blendshape weight to 1.
         1. Save as new mix
         1. Delete old blendshape
+    2. Delete "Basis"
 4. Select Armature
 5. Bake rig on the fly skeleton
 6. Cleanup Recursive Unused Datablocks
