@@ -26,11 +26,9 @@ Tested on Blender 2.93.
 1. Go to object mode
 1. For each blend shape in each mesh weighted by the skeleton
     1. Go to object data properties
-    1. Move new shape key called "Armature" below the bottom. (First slot)
-    1. Move "Armature" down one slot to the slot after the first slot.
-    2. Duplicate as many times as there are blend shapes
-    3. Set each blend to 1.0 strength
-    1. Delete the each of the extra blend shapes
+    1. Move new shape key called "Armature" to the first slot.
+    1. Move "Basis" down one slot to the slot after the first slot.
+    1. Set every other blendshapes to reference "Basis". 
 4. Select Armature
 5. Bake rig on the fly skeleton
 6. Cleanup Recursive Unused Datablocks
