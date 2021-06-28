@@ -17,6 +17,8 @@
 1. Select all
 1. Apply pose as rest pose
 1. Select all
+1. Clear transforms
+1. Select all
 1. Animation key the entire skeleton
 1. Go to object mode
 1. For each mesh weighted by the skeleton
@@ -28,6 +30,7 @@
     1. Rename "Armature" to "Basis"
 1. Select Armature
 1. Bake rig on the fly skeleton
+1. Cleanup Recursive Unused Datablocks
 1. Done
 
 ## License
