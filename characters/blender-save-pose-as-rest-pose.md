@@ -28,7 +28,10 @@ Tested on Blender 2.93.
     1. Go to object data properties
     1. Move new shape key called "Armature" to the second slot.
     1. Set weight to 1.0
-    1. Ensure every other blend shape other than "Armature" is set to "Basis".
+    2. For each blend shape
+        3. Set both "Armature" and blendshape weight to 1.
+        4. Save as new mix
+        5. Delete old blendshape
 4. Select Armature
 5. Bake rig on the fly skeleton
 6. Cleanup Recursive Unused Datablocks
