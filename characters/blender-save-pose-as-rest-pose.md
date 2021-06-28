@@ -1,5 +1,7 @@
 # How to save a pose as the rest pose in Blender
 
+Tested on Blender 2.93.
+
 1. Move to animation frame 0
 1. Select Armature
 1. Always check orient rig.
