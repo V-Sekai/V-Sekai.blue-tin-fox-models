@@ -2,6 +2,7 @@
 
 1. Move to animation frame 0
 1. Select Armature
+1. Always check orient rig.
 1. Rig skeleton in "Rig On the Fly" Blender addon
 1. Select left hand and click IK no pole
 1. Select the right hand and click IK no pole
