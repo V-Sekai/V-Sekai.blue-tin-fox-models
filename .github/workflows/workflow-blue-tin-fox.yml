@@ -12,8 +12,7 @@ jobs:
     - name: Update OS
       run: |
         uname -a
-        sudo apt install -y -qq xvfb unzip wget
-        sudo apt install -y flatpak
+        sudo apt install -y -q xvfb unzip wget flatpak
         sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         sudo flatpak install flathub org.blender.Blender -y
         sudo flatpak override org.blender.Blender --talk-name=org.freedesktop.Flatpak
