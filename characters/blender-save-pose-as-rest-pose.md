@@ -24,7 +24,7 @@
 1. Go to object mode
 1. For each mesh weighted by the skeleton
     1. Go to object data properties
-    1. Move new shape key called "Armature" to the top
+    1. Move new shape key called "Armature" below the bottom. (First slot)
     1. Move "Armature" down one slot
     1. Set "Armature" to 1.0 strength
     1. Delete the first slot also known as "Basis"
