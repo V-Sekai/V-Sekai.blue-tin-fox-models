@@ -29,9 +29,9 @@ Tested on Blender 2.93.
     1. Move new shape key called "Armature" to the second slot.
     1. Set weight to 1.0
     1. For each blend shape
-        1. Set both "Armature" to 1.0
+        1. Set "Armature" to 1.0
         3. "New Shape as Mix"
-        2. Set blend shape parent to "Armature" and "blend shape" weight to 1.
+        2. Set blend shape parent to "Armature" and "New Shape" weight to 1.
         4. Delete old blendshape
     2. Delete "Basis"
 4. Select Armature
