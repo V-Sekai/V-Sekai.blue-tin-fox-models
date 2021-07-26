@@ -29,9 +29,10 @@ Tested on Blender 2.93.
     1. Move new shape key called "Armature" to the second slot.
     1. Set weight to 1.0
     1. For each blend shape
-        1. Set both "Armature" and blendshape weight to 1.
-        1. Save as new mix
-        1. Delete old blendshape
+        1. Set "Armature" to 1.0
+        2. Set "Armature" and "New Shape" weight to 1.
+        3. "New Shape as Mix"
+        4. Delete old blendshape
     2. Delete "Basis"
 4. Select Armature
 5. Bake rig on the fly skeleton
