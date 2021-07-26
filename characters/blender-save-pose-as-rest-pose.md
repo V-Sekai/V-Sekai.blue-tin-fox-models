@@ -30,8 +30,9 @@ Tested on Blender 2.93.
     1. Set weight to 1.0
     1. For each blend shape
         1. Set both "Armature" and blendshape weight to 1.
-        1. Save as new mix
-        1. Delete old blendshape
+        2. Set blend shape parent to "Armature"
+        3. Save as new mix
+        4. Delete old blendshape
     2. Delete "Basis"
 4. Select Armature
 5. Bake rig on the fly skeleton
