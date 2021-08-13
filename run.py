@@ -71,7 +71,7 @@ for directory in directories:
                 continue
             bpy.ops.wm.open_mainfile(filepath=os.path.join(root, filename))
             basename = filename.rsplit(".blend", 1)[0]
-            basename = "v_sekai_" + basename
+            basename = basename
             bpy.ops.export_scene.gltf(
                 filepath=os.path.join(export_path, basename + ".gltf"),
                 export_format='GLB',
@@ -79,5 +79,5 @@ for directory in directories:
                 export_all_influences=True,
                 export_extras=True,
                 export_cameras=True,
-                export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai and 2019 MIT License Wonder Unit",
+                export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai. See https://github.com/V-Sekai/blue-tin-fox-models for attributed files.",
             )
