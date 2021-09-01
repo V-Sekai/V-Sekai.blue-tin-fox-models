@@ -28,3 +28,12 @@ jobs:
       with:
         name: V-Sekai Blue Tin Fox Models (glTF2) 
         path: result/*.glb
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: ${{ github.ref }}
+        prerelease: true
+        title: V-Sekai Blue Tin Fox Models ${{ github.ref }}
+        files: |
+          LICENSE
+          result
