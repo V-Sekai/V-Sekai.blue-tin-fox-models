@@ -33,28 +33,25 @@ jobs:
       id: current-time
       with:
         format: YYYY-MM-DDTHH-MM-SSZ
-    - name: Use current time
-      env:
-        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
-        filename: V-Sekai_VRM_Models_v$F_TIME.zip
+        filename: V-Sekai_VRM_Models.zip
         path: result/*.vrm
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
-        filename: V-Sekai_GLTF_Models_v$F_TIME.zip
+        filename: V-Sekai_GLTF_Models.zip
         path: result/*.glb
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: v$F_TIME
+        automatic_release_tag: "latest"
         prerelease: true
-        title: V-Sekai Blue Tin Fox Models v$F_TIME
+        title: V-Sekai Blue Tin Fox Models ${{ steps.current-time.outputs.formattedTime }}
         files: |
           LICENSE
-          V-Sekai_VRM_Models_v$F_TIME.zip
-          V-Sekai_GLTF_Models_v$F_TIME.zip
+          V-Sekai_VRM_Models.zip
+          V-Sekai_GLTF_Models.zip
