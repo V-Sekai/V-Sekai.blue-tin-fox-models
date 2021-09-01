@@ -42,7 +42,7 @@ jobs:
       with:
         type: 'zip'
         filename: V-Sekai_Models.zip
-        path: result 
+        path: result/*
           LICENSE
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
