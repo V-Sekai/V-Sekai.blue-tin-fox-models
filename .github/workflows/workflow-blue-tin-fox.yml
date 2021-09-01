@@ -46,4 +46,4 @@ jobs:
         prerelease: true
         title: V-Sekai Blue Tin Fox Models
         files: |
-          V-Sekai_Models_v$(date --iso=min --utc | sed -e "s/[-:+]/_/g").zip
+          V-Sekai_Models.zip
