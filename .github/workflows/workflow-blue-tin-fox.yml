@@ -35,8 +35,14 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
-        filename: 'V-Sekai_Blue_Tin_Fox-Models_v${{ steps.current-time.outputs.time }}.zip'
-        path: result
+        filename: V-Sekai_VRM_Models_v${{ steps.current-time.outputs.time }}.zip
+        path: result/*.vrm
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        filename: V-Sekai_GLTF_Models_v${{ steps.current-time.outputs.time }}.zip
+        path: result/*.glb
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -45,4 +51,5 @@ jobs:
         title: V-Sekai Blue Tin Fox Models v${{ steps.current-time.outputs.time }}
         files: |
           LICENSE
-          'V-Sekai_Blue_Tin_Fox-Models_v${{ steps.current-time.outputs.time }}.zip'
+          V-Sekai_VRM_Models_v${{ steps.current-time.outputs.time }}.zip
+          V-Sekai_GLTF_Models_v${{ steps.current-time.outputs.time }}.zip
