@@ -32,11 +32,6 @@ jobs:
       with:
         name: V-Sekai Blue Tin Fox Models (glTF2) 
         path: result/*.glb
-    - name: Get current time
-      uses: 1466587594/get-current-time@v2
-      id: current-time
-      with:
-        format: YYYY-MM-DDTHH-MM-SSZ
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
@@ -47,8 +42,8 @@ jobs:
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest"
+        automatic_release_tag: v$(date --iso=seconds --utc | sed -e "s/:/_/g" | sed -e "s/ /_/g" | sed -e "s/-/_/g"")
         prerelease: true
-        title: V-Sekai Blue Tin Fox Models ${{ steps.current-time.outputs.formattedTime }}
+        title: V-Sekai Blue Tin Fox Models
         files: |
-          V-Sekai_Models.zip
+          V-Sekai_Models_v$(date --iso=seconds --utc | sed -e "s/:/_/g" | sed -e "s/ /_/g" | sed -e "s/-/_/g"").zip
