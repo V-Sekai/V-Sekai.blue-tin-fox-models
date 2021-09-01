@@ -42,8 +42,8 @@ jobs:
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: v$(date --iso=seconds --utc | sed -e "s/:/_/g" | sed -e "s/ /_/g" | sed -e "s/-/_/g"")
+        automatic_release_tag: v$(date --iso=min --utc | sed -e "s/[-:+]/_/g")
         prerelease: true
         title: V-Sekai Blue Tin Fox Models
         files: |
-          V-Sekai_Models_v$(date --iso=seconds --utc | sed -e "s/:/_/g" | sed -e "s/ /_/g" | sed -e "s/-/_/g"").zip
+          V-Sekai_Models_v$(date --iso=min --utc | sed -e "s/[-:+]/_/g").zip
