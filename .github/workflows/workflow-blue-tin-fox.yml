@@ -20,6 +20,10 @@ jobs:
       run: |
         DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python `pwd`/run.py -- `pwd`
       shell: bash
+    - name: Copy license
+      run: |
+        cp LICENSE export/
+      shell: bash
     - uses: actions/upload-artifact@v2
       with:
         name: V-Sekai Blue Tin Fox Models (VRM) 
@@ -38,7 +42,8 @@ jobs:
       with:
         type: 'zip'
         filename: V-Sekai_Models.zip
-        path: result
+        path: result 
+          LICENSE
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -46,5 +51,4 @@ jobs:
         prerelease: true
         title: V-Sekai Blue Tin Fox Models ${{ steps.current-time.outputs.formattedTime }}
         files: |
-          LICENSE
           V-Sekai_Models.zip
