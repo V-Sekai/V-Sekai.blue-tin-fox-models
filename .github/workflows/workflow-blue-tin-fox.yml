@@ -22,7 +22,7 @@ jobs:
       shell: bash
     - name: Copy license
       run: |
-        cp LICENSE result/LICENSE
+        cp LICENSE result/
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
@@ -37,7 +37,8 @@ jobs:
       with:
         type: 'zip'
         filename: V-Sekai_Models.zip
-        directory: result
+        path: result/*
+          LICENSE
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
