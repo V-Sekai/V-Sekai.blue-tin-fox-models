@@ -22,22 +22,22 @@ jobs:
       shell: bash
     - name: Copy license
       run: |
-        cp LICENSE result/
+        cp LICENSE blockmesh/
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
         name: V-Sekai Blue Tin Fox Models (VRM) 
-        path: result/*.vrm        
+        path: blockmesh/*.vrm        
     - uses: actions/upload-artifact@v2
       with:
         name: V-Sekai Blue Tin Fox Models (glTF2) 
-        path: result/*.glb
+        path: blockmesh/*.glb
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
         type: 'zip'
         filename: V-Sekai_Models.zip
-        path: result/*
+        path: blockmesh/*
           LICENSE
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
