@@ -74,7 +74,7 @@ for directory in directories:
             basename = basename
             bpy.ops.export_scene.gltf(
                 filepath=os.path.join(export_path, basename + ".gltf"),
-                export_format='GLTF',
+                export_format='GLTF_SEPARATE',
                 export_colors=False,
                 export_all_influences=True,
                 export_extras=True,
