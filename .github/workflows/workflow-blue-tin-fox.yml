@@ -2,8 +2,7 @@ name: "Build workflow"
 on: [push]
 jobs:
   build-ubuntu:
-    using: 'docker'
-    image: 'nytimes/blender:2.93-cpu-ubuntu18.04'
+    runs-on: ubuntu-20.04
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -13,10 +12,13 @@ jobs:
     - name: Update OS
       run: |
         uname -a
-        sudo apt install -y -q xvfb unzip wget
+        sudo apt install -y -q xvfb unzip wget flatpak
+        sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        sudo flatpak install flathub org.blender.Blender -y
+        sudo flatpak override org.blender.Blender --talk-name=org.freedesktop.Flatpak
     - name: Blend
       run: |
-        DRI_PRIME=0 xvfb-run --auto-servernum blender --background --python `pwd`/run.py -- `pwd`
+        DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python `pwd`/run.py -- `pwd`
       shell: bash
     - name: Copy license
       run: |
