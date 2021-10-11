@@ -1,8 +1,8 @@
 # Blue Tin Fox Models
 
-Shot Generator is a feature within Storyboarder to easily set up shots using 3D characters, objects, lights, and cameras.
+Shot Generator is used by V-Sekai to easily set up shots using 3D characters, objects, lights, and cameras.
 
-Shot Generator uses 3D models as characters. This repository is the open source of those models as canonical Blender .blend files, and the exports used in shot generator: fbx, gltf, obj, etc.
+Shot Generator uses 3D models as characters. This repository is the open source of those models as canonical Blender .blend files, and the exports used in shot generator: gltf.
 
 ## Guidelines
 
@@ -37,8 +37,6 @@ We accomplished this by creating 4 main models:
   * Male - Youth
 
 <img src="https://user-images.githubusercontent.com/441117/50731218-9b1b4680-112c-11e9-844f-e950ba16b6ec.png">
-
-
 
 ### Morph targets (Blend Shapes)
 
@@ -87,16 +85,19 @@ The main reason why we are releasing these models open source is so people can m
 Making a new model should be fairly simple.
 
 What you don't need: 
+
   * You don't even need a rigged skeleton. (It will work without - of course you can't pose it)
   * You don't need a standard skeleton. (You can pose any bones. So you could have a rigged dog.)
   * You don't need blend shapes / morph targets.
   * You can have any blend shapes you want (It will load them in dynamically)
 
 What you need:
+
   * A model with a mesh
   * A single material with a single texture
 
 So some custom examples:
+
   * A character downloaded off the internet with no rig and you don't need to pose it
   * A dog - Who's a good boy?<br>  <img src="https://user-images.githubusercontent.com/441117/50732776-b5b2e700-114f-11e9-8877-d4b160e30389.png" width="300">
   * A snake
@@ -104,18 +105,3 @@ So some custom examples:
   * A person with very specific morph targets
   * A very specific model with lots of detail
   * A model based on one of these models you slightly edited
-
-----
-
-## Thoughts on Format - Blender
-
-Currently, most professional modelers tend to use Max or Maya. Max and Maya are expensive. Blender is free.
-
-I've been following Blender for tens of years. Blender is 23 years old. I last checked in on Blender a few years ago. It sucked. Shit didn't even have undo. I wanted to use it. I wanted to like it. But it was always, you know, shitty.
-
-Fast forward, Blender is excellent. It got better over time, and it's gotten so good, you can't ignore it. There's a new version 2.8, and honestly, it's awesome. It seems like they actually have a really great singular product visionary over there which is the problem with most open source software.
-
-I learned Blender over a weekend of watching Youtube tutorials. 
-
-It's easy to learn, capable (and in many cases better than paid software), and free. So we are standardizing the canonical models with it.
-
