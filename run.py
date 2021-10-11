@@ -74,10 +74,10 @@ for directory in directories:
             basename = basename
             bpy.ops.export_scene.gltf(
                 filepath=os.path.join(export_path, basename + ".gltf"),
-                export_format='GLB',
+                export_format='GLTF',
                 export_colors=False,
                 export_all_influences=True,
                 export_extras=True,
                 export_cameras=True,
-                export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai. See https://github.com/V-Sekai/blue-tin-fox-models for attributed files.",
+                export_copyright="Creative Commons Attribution 4.0 International Public License 2021 V-Sekai. 2019 Wonder Unit. See https://github.com/V-Sekai/blue-tin-fox-models for attributed files.",
             )
