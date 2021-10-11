@@ -14,8 +14,6 @@ Shot Generator uses 3D models as characters. This repository is the open source 
     1. Do not store glTF2s or other formats other than `.blend` in the repo.
     1. TODO Substance `.sbsar` and MaterialX `.mtlx`
     1. TODO vector graphics SVG
-    1. TODO reference the V-Sekai project in the convention. Maybe `VSEK_`
-
 
 ## Characters
 
@@ -41,6 +39,7 @@ We accomplished this by creating 4 main models:
 ### Morph targets (Blend Shapes)
 
 Body type is accomplished through morph targets. Morph targets or Blend Shapes are modifications to existing geometry. They have the same exact vertices, they are just in different locations. So you can easily mix/blend between 1 or more morph targets to get interesting model shapes. We decided on 4 prototypical body shapes: 
+
   * Mesomorph (Medium Build) [default] <br><img src="https://user-images.githubusercontent.com/441117/50731145-7bcfe980-112b-11e9-86c5-2157ef20b45f.png" width=500>
   * Ectomorph (Skinny)<br><img src="https://user-images.githubusercontent.com/441117/50731176-fc8ee580-112b-11e9-9102-a83692533551.png" width=500>
   * Muscular<br><img src="https://user-images.githubusercontent.com/441117/50731184-221bef00-112c-11e9-915f-b7f086ee2ba6.png" width=500>
@@ -63,6 +62,7 @@ The mesh of the model is rigged/skinned mostly by Mixamo's online tool. We use t
 Even though a 3D unit is arbitrary, the world has loosely agreed that this is the preferred conversion. 
 
 Shot Generator automatically scales the models to normalize them. However the scales for the standard model heights are:
+
   * Male - Adult: 1.8 (5'11")
   * Female - Adult: 1.625 (5'4")
   * Female - Youth: 1.6 (5'3")
