@@ -42,7 +42,7 @@ path = argv[0]
 
 bpy.ops.preferences.addon_install(filepath=os.path.join(path, "1_13_0.zip"))
 bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-1_13_0")
-export_path = path
+export_path = os.path.join(path, 'result')
 
 directories = ["characters"]
 shutil.rmtree(export_path, ignore_errors=True)
