@@ -105,3 +105,7 @@ So some custom examples:
   * A person with very specific morph targets
   * A very specific model with lots of detail
   * A model based on one of these models you slightly edited
+
+## Sources
+
+Migrated from https://github.com/wonderunit/shot-generator-models
