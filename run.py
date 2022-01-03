@@ -73,8 +73,8 @@ for directory in directories:
             basename = filename.rsplit(".blend", 1)[0]
             basename = basename
             bpy.ops.export_scene.gltf(
-                filepath=os.path.join(export_path, basename + ".gltf"),
-                export_format='GLTF_SEPARATE',
+                filepath=os.path.join(export_path, basename + ".glb"),
+                export_format='GLB',
                 export_texture_dir='textures',
                 export_colors=False,
                 export_all_influences=True,
