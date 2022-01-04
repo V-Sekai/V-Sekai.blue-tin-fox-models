@@ -3,18 +3,6 @@
 Shot Generator is used by V-Sekai to easily set up shots using 3D characters, objects, lights, and cameras.
 
 Shot Generator uses 3D models as characters. This repository is the open source of those models as canonical Blender .blend files, and the exports used in shot generator: gltf.
-
-## Guidelines
-
-1. Use Blender blend files from 2.93 LTS.
-1. Export Blend file:
-    1. All images are stored outside of the blend file.
-    1. Do not have LOD in the name.
-    1. Do not store LODs in the Blend file.
-    1. Do not store glTF2s or other formats other than `.blend` in the repo.
-    1. TODO Substance `.sbsar` and MaterialX `.mtlx`
-    1. TODO vector graphics SVG
-
 ## Characters
 
 The objective of Shot Generator is to keep the setup of a shot extremely simple. Therefore, the characters are designed with the silhouette of the character in mind - a shape that upon quick glance, you can tell:
@@ -105,6 +93,17 @@ So some custom examples:
   * A person with very specific morph targets
   * A very specific model with lots of detail
   * A model based on one of these models you slightly edited
+
+## Guidelines
+
+1. Use Blender blend files from 2.93 LTS.
+1. Export Blend file:
+    1. All images are stored outside of the blend file.
+    1. Do not have LOD in the name.
+    1. Do not store LODs in the Blend file.
+    1. Do not store glTF2s or other formats other than `.blend` in the repo.
+    1. TODO Substance `.sbsar` and MaterialX `.mtlx`
+    1. TODO vector graphics SVG
 
 ## Sources
 
