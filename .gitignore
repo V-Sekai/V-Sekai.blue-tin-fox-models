@@ -1,2 +1,6 @@
 *.blend1
 *.import
+
+ui/controller/textures/
+
+test/textures/
