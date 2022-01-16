@@ -12,9 +12,9 @@ Tested on Blender 2.93.
 1. Animation key the entire skeleton
 1. Go to object mode
 1. For each mesh weighted by the skeleton
-    1. Go to the mesh object properties
-    1. Go to armature Modifier
-    1. Save armature as a shape key
+	1. Go to the mesh object properties
+	1. Go to armature Modifier
+	1. Save armature as a shape key
 1. Select the skeleton
 1. Go to pose mode
 1. Select all
@@ -25,15 +25,15 @@ Tested on Blender 2.93.
 1. Animation key the entire skeleton
 1. Go to object mode
 1. For each blend shape in each mesh weighted by the skeleton
-    1. Go to object data properties
-    1. Move new shape key called "Armature" to the second slot.
-    1. Set weight to 1.0
-    1. For each blend shape
-        1. Set "Armature" to 1.0
-        2. Set "Armature" and "New Shape" weight to 1.
-        3. "New Shape as Mix"
-        4. Delete old blendshape
-    2. Delete "Basis"
+	1. Go to object data properties
+	1. Move new shape key called "Armature" to the second slot.
+	1. Set weight to 1.0
+	1. For each blend shape
+		1. Set "Armature" to 1.0
+		2. Set "Armature" and "New Shape" weight to 1.
+		3. "New Shape as Mix"
+		4. Delete old blendshape
+	2. Delete "Basis"
 4. Select Armature
 5. Bake rig on the fly skeleton
 6. Cleanup Recursive Unused Datablocks
