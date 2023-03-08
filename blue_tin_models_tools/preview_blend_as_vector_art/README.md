@@ -15,3 +15,7 @@
 - Exploded view
 - Cross-sectional view
 - Zoomed-in view of a specific feature or detail
+
+## References
+
+* https://github.com/google-research/kubric
