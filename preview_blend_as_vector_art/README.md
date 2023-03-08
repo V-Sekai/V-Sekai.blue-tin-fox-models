@@ -1,6 +1,4 @@
-## List of preview generator ideas
-
-List of possible 2d previews of a product display that are non-interactive.
+## List of possible 2d previews of a product display that are non-interactive.
 
 * Front view of the product
 * Back view of the product
