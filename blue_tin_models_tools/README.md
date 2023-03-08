@@ -48,10 +48,10 @@ Even though a 3D unit is arbitrary, the world has loosely agreed that this is th
 
 Shot Generator automatically scales the models to normalize them. However the scales for the standard model heights are:
 
-  * Male - Adult: 1.8 (5'11")
-  * Female - Adult: 1.625 (5'4")
-  * Female - Youth: 1.6 (5'3")
-  * Male - Youth: 1.6 (5'3")
+  * Male - Adult: 1.8 meters
+  * Female - Adult: 1.625 meters
+  * Female - Youth: 1.6 meters
+  * Male - Youth: 1.6 meters
 
 Height is controlled by scaling the armature/skeleton to the appropriate height. The only exception is that the head bone does not scale. As people are taller and shorter, their heads are roughly the same size. It is true that skulls vary in size. The scale of the head can be overridden. 
 
