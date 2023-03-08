@@ -44,6 +44,8 @@ The mesh of the model is rigged/skinned mostly by Mixamo's online tool. We use t
 
 1 3D Unit = 1 Meter = 3.28084 Feet = 1.09361 Yards
 
+Godot Engine where we do scaling and it uses 1 meters scale.
+
 Even though a 3D unit is arbitrary, the world has loosely agreed that this is the preferred conversion. 
 
 Shot Generator automatically scales the models to normalize them. However the scales for the standard model heights are:
