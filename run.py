@@ -40,8 +40,8 @@ argv = sys.argv
 argv = argv[argv.index("--") + 1:]  # get all args after "--"
 path = argv[0]
 
-bpy.ops.preferences.addon_install(filepath=os.path.join(path, "2_0_9.zip"))
-bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-2_0_9")
+bpy.ops.preferences.addon_install(filepath=os.path.join(path, "VRM_Addon_for_Blender-2_14_17.zip"))
+bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-2_14_17")
 export_path = os.path.join(path, 'blockmesh')
 
 directories = ["characters"]
