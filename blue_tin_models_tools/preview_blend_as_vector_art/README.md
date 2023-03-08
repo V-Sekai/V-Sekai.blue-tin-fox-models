@@ -1,12 +1,17 @@
-## List of possible 2d previews of a product display that are non-interactive.
+# Non-Interactive Product Display Previews
 
-* Front view of the product
-* Back view of the product
-* Top view of the product
-* Bottom view of the product
-* Left side view of the product
-* Right side view of the product
-* Isometric view of the product
-* Exploded view of the product
-* Cross-sectional view of the product
-* Zoomed-in view of a specific feature or detail of the product
+## Views of the product
+
+- Front view
+- Back view
+- Top view
+- Bottom view
+- Left side view
+- Right side view
+
+## Detailed views of the product
+
+- Isometric view
+- Exploded view
+- Cross-sectional view
+- Zoomed-in view of a specific feature or detail
