@@ -45,7 +45,7 @@ The mesh of the model is rigged/skinned mostly by Mixamo's online tool. We use t
 
 ### Scale (Height)
 
-1 3D Unit = 1 Meter = 3.28084 Feet = 1.09361 Yards (OMFG WTF IS A YARD AND WHY WE NEED IT WTFFFF)
+1 3D Unit = 1 Meter = 3.28084 Feet = 1.09361 Yards
 
 Even though a 3D unit is arbitrary, the world has loosely agreed that this is the preferred conversion. 
 
@@ -95,6 +95,10 @@ So some custom examples:
   * A model based on one of these models you slightly edited
 
 ## Guidelines
+
+Substance .sbsar is a file format used by Substance Designer, a node-based texturing tool for creating materials.
+
+MaterialX is an open standard for transfer of rich material and look-development content between applications and renderers.
 
 1. Use Blender blend files from 2.93 LTS.
 1. Export Blend file:
