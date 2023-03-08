@@ -20,6 +20,10 @@ jobs:
       run: |
         DRI_PRIME=0 xvfb-run --auto-servernum flatpak run org.blender.Blender --background --python `pwd`/run.py -- `pwd`
       shell: bash
+    - name: Make directories
+      run: |
+        mkdir -p blockmesh
+      shell: bash
     - name: Copy license
       run: |
         cp LICENSE blockmesh/
