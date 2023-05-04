@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Get VRM addon
       run: |
-        wget -L https://github.com/saturday06/VRM-Addon-for-Blender/releases/download/2_14_17/VRM_Addon_for_Blender-2_14_17.zip
+        wget -L https://github.com/saturday06/VRM-Addon-for-Blender/releases/download/2_15_22/VRM_Addon_for_Blender-2_15_22.zip
     - name: Update OS
       run: |
         uname -a
