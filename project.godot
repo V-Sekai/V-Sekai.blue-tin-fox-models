@@ -13,3 +13,11 @@ config_version=5
 config/name="Blue Tin Fox Project"
 config/features=PackedStringArray("4.0", "Double Precision", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+import/reimport_missing_imported_files=false
+
+[rendering]
+
+lights_and_shadows/use_physical_light_units=true
