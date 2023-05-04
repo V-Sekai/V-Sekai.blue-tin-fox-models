@@ -44,7 +44,7 @@ bpy.ops.preferences.addon_install(filepath=os.path.join(path, "VRM_Addon_for_Ble
 bpy.ops.preferences.addon_enable(module="VRM_Addon_for_Blender-2_15_22")
 export_path = os.path.join(path, 'blockmesh')
 
-directories = ["characters"]
+directories = ["blue_tin_fox/characters"]
 shutil.rmtree(export_path, ignore_errors=True)
 posixpath.os.mkdir(export_path, mode=0o777)
 for directory in directories:
@@ -61,7 +61,7 @@ for directory in directories:
                 filepath=os.path.join(export_path, basename + ".vrm")
             )
 
-directories = ["environments", "objects", "characters"]
+directories = ["blue_tin_fox"]
 for directory in directories:
     for root, subdirs, files in os.walk(os.path.join(path, directory)):   
         for subdir in subdirs:
