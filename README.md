@@ -29,6 +29,6 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 If you have any questions or need assistance, feel free to reach out to the maintainers:
 
-- **K. S. Ernest (iFire) Lee** - Discord `iFire#6518` or any of the links on https://chibifire.com/
+- **K. S. Ernest (iFire) Lee** - Discord `iFire#6518` or any of ways to contact me on https://chibifire.com/
 
 You can also report issues or submit feature requests through the [issue tracker](https://github.com/V-Sekai/blender-art-blue-tin-fox-models/issues) on GitHub.
